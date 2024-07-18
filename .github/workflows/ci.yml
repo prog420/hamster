@@ -1,8 +1,8 @@
-name: Hamster Taps API
+name: Hamster Taps
 
 on:
   schedule:
-    - cron: "30 * * * *" # Runs every hour at minute 30
+    - cron: "*/15 * * * *" # At every 15th minute.
   workflow_dispatch: # Allows manual triggering
   # push:
   #   branches: [ "main" ]
@@ -10,7 +10,7 @@ on:
   #   branches: [ "main" ]
 
 jobs:
-  roll:
+  taps:
     runs-on: ubuntu-latest
 
     steps:
