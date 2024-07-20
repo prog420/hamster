@@ -23,7 +23,7 @@ time.sleep(1)
 requests.post(url=CONFIG_URL, headers=headers)
 
 # Set tap count to 1 and send request to check available taps.
-payload = {"count": 1, "availableTaps": 9000, "timestamp": 1721320096}
+payload = {"count": 1, "availableTaps": 9000, "timestamp": int(time.time())}
 response = requests.post(url=TAP_URL, headers=headers, json=payload)
 
 # Update payload
@@ -36,4 +36,5 @@ print(f"Available Taps: {available_taps}")
 # Use all available taps
 for i in range(math.ceil(available_taps / 1000)):
     time.sleep(2)
+    payload["timestamp"] = int(time.time())
     response = requests.post(url=TAP_URL, headers=headers, json=payload)
