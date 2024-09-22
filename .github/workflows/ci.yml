@@ -1,8 +1,8 @@
 name: Hamster Taps
 
 on:
-  schedule:
-    - cron: "*/30 * * * *" # At every 30th minute.
+  # schedule:
+  #   - cron: "*/30 * * * *" # At every 30th minute.
   workflow_dispatch: # Allows manual triggering
   # push:
   #   branches: [ "main" ]
